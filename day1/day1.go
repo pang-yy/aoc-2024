@@ -10,7 +10,7 @@ import (
 
 func main() {
     var leftArr, rightArr []int = readInput()
-
+    
     var totalDistance int = calculateDistance(leftArr, rightArr)
     var totalSimilarity int = calculateSimilarity(leftArr, rightArr)
 
@@ -29,7 +29,7 @@ func calculateSimilarity(leftArr []int, rightArr []int) int {
     for _, value := range leftArr {
         result += (value * freqMap[value])
     }
-
+    
     return result
 }
 
