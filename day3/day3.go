@@ -61,6 +61,10 @@ func parseMemoryRegexp(memory string, conditional bool) int {
 }
 
 func parseMemory(memory string, conditional bool) int {
+    if (conditional) {
+        panic("Not yey implemented")
+    }
+
     var x int
     var y int
     var result int
