@@ -1,12 +1,12 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
-	"regexp"
-	"strconv"
-	"strings"
+    "bufio"
+    "fmt"
+    "os"
+    "regexp"
+    "strconv"
+    "strings"
 )
 
 func main() {
@@ -26,11 +26,11 @@ func parseMemoryRegexp(memory string, conditional bool) int {
 
     var re *regexp.Regexp
     if (!conditional) {
-	    re = regexp.MustCompile(`mul\(([0-9]|[1-9][0-9]{1,2})[,]([0-9]|[1-9][0-9]{1,2})\)`)
+        re = regexp.MustCompile(`mul\((\d{1,3}),(\d{1,3})\)`)
     } else {
-	    re = regexp.MustCompile(`mul\(([0-9]|[1-9][0-9]{1,2})[,]([0-9]|[1-9][0-9]{1,2})\)|do\(\)|don't\(\)`)
+        re = regexp.MustCompile(`mul\((\d{1,3}),(\d{1,3})\)|do\(\)|don't\(\)`)
     }
-	matches = re.FindAllString(memory, -1)
+    matches = re.FindAllString(memory, -1)
 
     if (!conditional) {
         for _, mul := range(matches) {
