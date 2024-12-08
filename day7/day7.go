@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
     "strings"
-    "time"
 )
 
 func main() {
@@ -22,12 +21,10 @@ func main() {
         return
     }
 
-    start := time.Now()
     var ans1, ans2 int
     ans1, ans2 = sumPossible(inputs)
     fmt.Printf("Part One: %d\n", ans1)
     fmt.Printf("Part Two: %d\n", ans2)
-    fmt.Printf("Time taken: %s\n", time.Since(start))
 }
 
 func sumPossible(inputs [][]int) (int, int) {
